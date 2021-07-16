@@ -1,0 +1,273 @@
+$colorMatrix: #03A062;
+$colorBlack: #000000;
+$colorWhite: #FFFFFF;
+$colorGrey: rgb(128, 128, 128);
+$colorDarkGrey: rgb(17, 17, 17);
+
+$borderMatrix: 1px solid $colorMatrix;
+$borderWhite: 1px solid $colorWhite;
+$borderGrey: 1px solid $colorGrey;
+$borderTransp: 1px solid rgba(0,0,0,0);
+
+//general layout
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+} 
+
+.hide {
+  display: none !important;
+}
+.app {
+  height: 100vh;
+  min-height: 390px;
+  min-width: 820px;
+  background-color: $colorDarkGrey;
+  overflow: hidden;
+}
+
+#title {
+  color: $colorWhite;
+  font-family:'Courier New', Courier, monospace;
+  text-align: center;
+  padding-top: 10px;
+} 
+
+#footer {
+  @extend #title;
+  padding-bottom: 10px;
+}
+
+.wrapper {
+  display: flex;
+  padding: 5px 10px;
+  height: calc(100vh - 90px);
+  min-height: 300px;
+  
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin: 2.5px;
+}
+
+//navbar
+.nav {
+  background-color: $colorWhite;
+  font-family: 'Courier New', Courier, monospace;
+  min-width: 390px;
+  line-height: 1.5;
+  color: $colorMatrix;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 5px;
+
+        h3 {
+          margin-left: 10px;
+        }
+
+        a {
+          padding: 0 10px;
+          border-left: $borderWhite;
+          border-right: $borderWhite;
+          text-decoration: none;
+          color: $colorWhite;
+          background-color: $colorGrey;
+        }
+        
+        a:hover {
+          border: $borderWhite;
+          line-height: 1.43;
+          background-color: $colorMatrix;
+        }
+        a:active {
+          border: $borderWhite;
+          line-height: 1.35;
+          padding: 0 9.5px;
+          border-width: 1.5px;
+          background-color: $colorMatrix;
+          color:$colorGrey;
+        }
+        .active {  
+          border-left: $borderTransp;
+          border-right: $borderTransp;
+          background-color: $colorMatrix;
+        }
+       
+    }
+}
+
+//input side
+.edit-panel {
+  height: 100%;
+  border: $borderMatrix;
+
+  textarea {
+    resize: none;
+    padding: 0 10px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background-color: $colorBlack;
+    color: $colorMatrix;
+    font-size: 16px;
+  }
+
+  textarea:focus {
+    outline: $colorMatrix solid 2px;
+  }
+}
+
+//viewing side
+.viewer-panel {
+  height: 100%;
+  overflow: auto;
+  border: $borderGrey;
+  background-color: white;
+  word-break: break-word;
+}
+
+#outputView {
+ margin: default;
+ padding: default;
+}
+#preview {
+  display: flex;
+  flex-direction: column;
+  padding: 7.5px;
+  overflow: auto;
+
+//previewer styling
+    h1 {	
+      display: block;
+      font-size: 2em;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: bold;
+      border-bottom: $borderGrey;
+    }
+
+    h2 {
+      display: block;
+      font-size: 1.5em;
+      margin-top: 0.83em;
+      margin-bottom: 0.83em;
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: bold;
+      border-bottom: $borderGrey;
+    }
+
+    h3 {
+      display: block;
+      font-size: 1.17em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: bold;
+    }
+    
+    h4 {
+      display: block;
+      margin-top: 1.33em;
+      margin-bottom: 1.33em;
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: bold;
+    }
+
+    h5 {
+      display: block;
+      font-size: .83em;
+      margin-top: 1.67em;
+      margin-bottom: 1.67em;
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: bold;      
+    }
+  
+    h6 {
+      display: block;
+      font-size: .67em;
+      margin-top: 2.33em;
+      margin-bottom: 2.33em;
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: bold;
+    }
+
+    ol {
+      padding-left: 40px;
+    }
+
+    p {
+      display: block;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    code {
+      background-color: rgb(224, 224, 224);
+    }
+
+    pre {
+      display: block;
+      font-family: monospace;
+      white-space: pre;
+      margin: 1em 0;
+      background-color:$colorBlack;
+      color: $colorWhite;
+      padding: 4px;
+
+        code {
+          background-color: inherit;
+        }
+    }
+    
+    ul {
+      margin: 1em 0;
+      padding-left: 40px;
+    }
+
+    blockquote {
+      margin: 7px 5px 7px 5px;
+      border-left: 5px solid $colorGrey;
+      background-color: rgb(224, 224, 224);
+      padding: 5px 0 5px 7px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+    
+    td, th {
+      border: $borderGrey;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      padding: 0 5px;
+    }
+}
+
+//html code styling
+#rawview {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+
